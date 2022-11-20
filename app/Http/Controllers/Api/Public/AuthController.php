@@ -28,7 +28,7 @@ class AuthController extends Controller
             'password' => $input['password'],
         ];
 
-        throw_if(!Auth::attempt($data), new AuthenticationException('Bad attempt'));
+        throw_if(! Auth::attempt($data), new AuthenticationException('Bad attempt'));
 
         /** @var User $user */
         $user = Auth::user();

@@ -14,9 +14,9 @@ abstract class TestCase extends BaseTestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        $this->headers =  [
+        $this->headers = [
             'Authorization' => 'Bearer 2|DO5m0zBFtcetCWemw2ye3UBSjpER33H3jEIoOzFH',
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ];
     }
 }

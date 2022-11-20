@@ -8,9 +8,7 @@ use App\Services\Service;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Pavelrockjob\Filtersortpaginate\Paginate;
 
 class CarService extends Service

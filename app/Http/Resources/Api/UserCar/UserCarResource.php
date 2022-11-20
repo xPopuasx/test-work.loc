@@ -3,7 +3,6 @@
 namespace App\Http\Resources\Api\UserCar;
 
 use App\Http\Resources\Api\User\UserResource;
-use App\Models\Car\Car;
 use App\Models\UserCar;
 use Illuminate\Http\Resources\Json\JsonResource;
 

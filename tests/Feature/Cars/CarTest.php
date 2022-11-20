@@ -3,9 +3,7 @@
 namespace Tests\Feature\Users;
 
 use App\Models\Car\Car;
-use App\Models\User\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class CarTest extends TestCase
@@ -13,7 +11,7 @@ class CarTest extends TestCase
     public function test_create_car()
     {
         $response = $this->withHeaders($this->headers)->postJson('/api/cars', [
-            'number' => (string)fake()->numberBetween(800000, 9999999)
+            'number' => (string) fake()->numberBetween(800000, 9999999),
         ]);
 
         $response->assertStatus(201)
@@ -22,7 +20,7 @@ class CarTest extends TestCase
                     'id',
                     'number',
                     'user',
-                ]
+                ],
             ]);
     }
 
@@ -35,8 +33,8 @@ class CarTest extends TestCase
                 'data' => [
                     'id',
                     'number',
-                    'user'
-                ]
+                    'user',
+                ],
             ]);
     }
 
@@ -53,15 +51,15 @@ class CarTest extends TestCase
                         'id',
                         'number',
                         'user',
-                    ]
-                ]
+                    ],
+                ],
             ]);
     }
 
     public function test_update_car()
     {
         $response = $this->withHeaders($this->headers)->patchJson('/api/cars/'.$this->getCar()->id, [
-            'number' => (string)fake()->numberBetween(9000000, 9999999)
+            'number' => (string) fake()->numberBetween(9000000, 9999999),
         ]);
 
         $response->assertStatus(200)
@@ -69,8 +67,8 @@ class CarTest extends TestCase
                 'data' => [
                     'id',
                     'number',
-                    'user'
-                ]
+                    'user',
+                ],
             ]);
     }
 

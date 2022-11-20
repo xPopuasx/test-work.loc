@@ -6,9 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Admin\Car\GetCarsRequest;
 use App\Http\Requests\Api\Admin\Car\StoreCarRequest;
 use App\Http\Requests\Api\Admin\Car\UpdateCarRequest;
-use App\Http\Resources\Api\Car\CarResource;
 use App\Http\Resources\Api\Car\CarCollection;
-use App\Http\Resources\Api\User\UserResource;
+use App\Http\Resources\Api\Car\CarResource;
 use App\Models\Car\Car;
 use App\Models\User\User;
 use App\Services\Car\CarService;
@@ -30,6 +29,7 @@ class CarController extends Controller
     /**
      * @apiResourceCollection App\Http\Resources\Api\Car\CarCollection
      * @apiResourceModel App\Models\Car\Car paginate=10
+     *
      * @param  GetCarsRequest  $request
      * @return CarCollection
      */
@@ -63,7 +63,7 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Car $car
+     * @param  Car  $car
      * @return CarResource
      */
     #[ResponseFromApiResource(CarResource::class, Car::class)]
@@ -77,7 +77,7 @@ class CarController extends Controller
 
     /**
      * @param  UpdateCarRequest  $request
-     * @param  Car $car
+     * @param  Car  $car
      * @return CarResource
      *
      * @throws Exception

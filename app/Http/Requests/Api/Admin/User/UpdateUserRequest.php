@@ -29,8 +29,8 @@ class UpdateUserRequest extends FormRequest
             'password' => 'nullable|string',
             'email' => ['nullable', 'string', 'email', Rule::unique('users')->ignore($this->route()->user->id)],
             'car_id' => ['nullable', 'integer', 'exists:cars,id',
-                Rule::unique('user_cars', 'car_id')->ignore($this->route()->user->id, 'carable_id')
-            ]
+                Rule::unique('user_cars', 'car_id')->ignore($this->route()->user->id, 'carable_id'),
+            ],
         ];
     }
 }

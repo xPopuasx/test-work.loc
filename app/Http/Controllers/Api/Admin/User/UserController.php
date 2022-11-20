@@ -29,6 +29,7 @@ class UserController extends Controller
     /**
      * @apiResourceCollection App\Http\Resources\Api\User\UserCollection
      * @apiResourceModel App\Models\User\User paginate=10
+     *
      * @param  GetUsersRequest  $request
      * @return UserCollection
      */

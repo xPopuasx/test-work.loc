@@ -2,7 +2,6 @@
 
 namespace App\Models\User;
 
-use App\Models\Car\Car;
 use App\Models\UserCar;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphOne;

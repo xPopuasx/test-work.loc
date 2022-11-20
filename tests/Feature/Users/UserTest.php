@@ -20,12 +20,12 @@ class UserTest extends TestCase
 
         $response->assertStatus(201)
             ->assertJsonStructure([
-                "data" => [
+                'data' => [
                     'id',
                     'name',
                     'email',
-                    'car'
-                ]
+                    'car',
+                ],
             ]);
     }
 
@@ -39,8 +39,8 @@ class UserTest extends TestCase
                     'id',
                     'name',
                     'email',
-                    'car'
-                ]
+                    'car',
+                ],
             ]);
     }
 
@@ -58,9 +58,9 @@ class UserTest extends TestCase
                         'id',
                         'name',
                         'email',
-                        'car'
-                    ]
-                ]
+                        'car',
+                    ],
+                ],
             ])->assertJsonCount(3);
     }
 
@@ -69,7 +69,7 @@ class UserTest extends TestCase
         $response = $this->withHeaders($this->headers)->patchJson('/api/users/'.$this->getUser()->id, [
             'name' => 'update_'.Str::random(8),
             'email' => 'update_'.Str::random(10).'@mail.ru',
-            'car_id' => $this->getCar()->id
+            'car_id' => $this->getCar()->id,
         ]);
 
         $response->assertStatus(200)
@@ -78,8 +78,8 @@ class UserTest extends TestCase
                     'id',
                     'name',
                     'email',
-                    'car'
-                ]
+                    'car',
+                ],
             ]);
     }
 
@@ -89,14 +89,14 @@ class UserTest extends TestCase
         $response = $this->withHeaders($this->headers)->patchJson('/api/users/'.User::query()->find(1)->id, [
             'name' => 'update_'.Str::random(8),
             'email' => 'update_'.Str::random(10).'@mail.ru',
-            'car_id' => $this->getCar()->id
+            'car_id' => $this->getCar()->id,
         ]);
 
         $response->assertStatus(422)
             ->assertJsonStructure([
                 'data' => [
-                    'car_id'
-                ]
+                    'car_id',
+                ],
             ]);
     }
 
@@ -106,7 +106,6 @@ class UserTest extends TestCase
 
         $response->assertStatus(200);
     }
-
 
     /**
      * @return User|null

@@ -61,7 +61,7 @@ class UserService extends Service
 
             $model->update($request);
 
-            (!empty($request['car_id']))
+            (! empty($request['car_id']))
                 ? $model->userCar()->updateOrCreate(['carable_id' => $model->id], ['car_id' => $request['car_id']])
                 : $model->userCar()->delete();
 

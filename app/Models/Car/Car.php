@@ -27,7 +27,7 @@ class Car extends Model
     ];
 
     public $casts = [
-        'user'
+        'user',
     ];
 
     public function tenant(): hasOne
