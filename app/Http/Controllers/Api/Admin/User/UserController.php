@@ -12,7 +12,14 @@ use App\Models\User\User;
 use App\Services\User\UserService;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 
+#[Group('Users')]
+#[Authenticated]
 class UserController extends Controller
 {
     public function __construct(private UserService $userService)
@@ -20,9 +27,12 @@ class UserController extends Controller
     }
 
     /**
+     * @apiResourceCollection App\Http\Resources\Api\User\UserCollection
+     * @apiResourceModel App\Models\User\User paginate=10
      * @param  GetUsersRequest  $request
      * @return UserCollection
      */
+    #[Endpoint('show users')]
     public function index(GetUsersRequest $request): UserCollection
     {
         $list = $this->userService->getWithPaginate($request->validated(), null);
@@ -39,6 +49,8 @@ class UserController extends Controller
      *
      * @throws Exception
      */
+    #[ResponseFromApiResource(UserResource::class, User::class)]
+    #[Endpoint('Store user')]
     public function store(StoreUserRequest $request): UserResource
     {
         $user = $this->userService->create($request->validated(), null);
@@ -53,6 +65,8 @@ class UserController extends Controller
      * @param  User  $user
      * @return UserResource
      */
+    #[ResponseFromApiResource(UserResource::class, User::class)]
+    #[Endpoint('Create user')]
     public function show(User $user): UserResource
     {
         $user->load(['userCar']);
@@ -67,6 +81,8 @@ class UserController extends Controller
      *
      * @throws Exception
      */
+    #[ResponseFromApiResource(UserResource::class, User::class)]
+    #[Endpoint('Update user')]
     public function update(UpdateUserRequest $request, User $user): UserResource
     {
         $user = $this->userService->update($user, $request->validated());
@@ -81,6 +97,8 @@ class UserController extends Controller
      * @param  User  $user
      * @return JsonResponse
      */
+    #[Response(['ok'], 200)]
+    #[Endpoint('delete user')]
     public function destroy(User $user): JsonResponse
     {
         $this->userService->delete($user);
