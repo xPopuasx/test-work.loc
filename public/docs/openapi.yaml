@@ -1,0 +1,749 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/auth/login:
+    post:
+      summary: ''
+      operationId: postApiAuthLogin
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: hudson45@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: "&o)'<vp6EC;"
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/cars:
+    get:
+      summary: 'show cars'
+      operationId: showCars
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 18
+                      number: 9559966
+                      user: null
+                    -
+                      id: 19
+                      number: 9303641
+                      user: null
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: 10
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 18
+                        number: 9559966
+                        user: null
+                      -
+                        id: 19
+                        number: 9303641
+                        user: null
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: 10
+                      to: 2
+                      total: 2
+      tags:
+        - 'User management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  type: string
+                  description: ''
+                  example: null
+                sort_by:
+                  type: string
+                  description: ''
+                  example: null
+                sort_direction:
+                  type: string
+                  description: ''
+                  example: null
+                per_page:
+                  type: integer
+                  description: ''
+                  example: 19
+      security: []
+    post:
+      summary: 'store car'
+      operationId: storeCar
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 20
+                    number: 9067076
+                    user: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 20
+                      number: 9067076
+                      user: null
+      tags:
+        - 'User management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number:
+                  type: string
+                  description: ''
+                  example: facere
+              required:
+                - number
+      security: []
+  '/api/cars/{id}':
+    get:
+      summary: 'show car'
+      operationId: showCar
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 21
+                    number: 9609612
+                    user: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 21
+                      number: 9609612
+                      user: null
+      tags:
+        - 'User management'
+      security: []
+    put:
+      summary: 'update car'
+      operationId: updateCar
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 22
+                    number: 9303306
+                    user: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 22
+                      number: 9303306
+                      user: null
+      tags:
+        - 'User management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number:
+                  type: string
+                  description: ''
+                  example: ipsam
+              required:
+                - number
+      security: []
+    delete:
+      summary: 'delete car'
+      operationId: deleteCar
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - ok
+      tags:
+        - 'User management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the car.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/users:
+    get:
+      summary: 'show users'
+      operationId: showUsers
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 102
+                      name: 'Dr. Danielle Ratke'
+                      email: gschuppe@example.com
+                    -
+                      id: 103
+                      name: 'Halie Marquardt'
+                      email: dkessler@example.org
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: 10
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 102
+                        name: 'Dr. Danielle Ratke'
+                        email: gschuppe@example.com
+                      -
+                        id: 103
+                        name: 'Halie Marquardt'
+                        email: dkessler@example.org
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: 10
+                      to: 2
+                      total: 2
+      tags:
+        - Users
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  type: string
+                  description: ''
+                  example: null
+                sort_by:
+                  type: string
+                  description: ''
+                  example: null
+                sort_direction:
+                  type: string
+                  description: ''
+                  example: null
+                per_page:
+                  type: integer
+                  description: ''
+                  example: 19
+    post:
+      summary: 'Store user'
+      operationId: storeUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 104
+                    name: 'Earnestine Welch'
+                    email: lori.leannon@example.net
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 104
+                      name: 'Earnestine Welch'
+                      email: lori.leannon@example.net
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: velit
+                password:
+                  type: string
+                  description: ''
+                  example: '_G-[!*y'
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: robel.theresa@example.com
+              required:
+                - password
+                - email
+  '/api/users/{id}':
+    get:
+      summary: 'Create user'
+      operationId: createUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 105
+                    name: 'Naomie Huel'
+                    email: ferne.yundt@example.org
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 105
+                      name: 'Naomie Huel'
+                      email: ferne.yundt@example.org
+      tags:
+        - Users
+    put:
+      summary: 'Update user'
+      operationId: updateUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 106
+                    name: 'Ms. Kavon Dooley V'
+                    email: amira06@example.com
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 106
+                      name: 'Ms. Kavon Dooley V'
+                      email: amira06@example.com
+      tags:
+        - Users
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: unde
+                password:
+                  type: string
+                  description: ''
+                  example: "?`S99I3P*LVb'^N{.57"
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: wsatterfield@example.net
+                car_id:
+                  type: integer
+                  description: ''
+                  example: 10
+    delete:
+      summary: 'delete user'
+      operationId: deleteUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - ok
+      tags:
+        - Users
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'User management'
+    description: ''
+  -
+    name: Users
+    description: ''
