@@ -10,78 +10,13 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8b4e4ddf-2844-4819-9f2b-5acd4dd8e273",
+        "_postman_id": "18e01b74-b751-4f21-878b-306a42d16df9",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
-            "description": "",
-            "item": [
-                {
-                    "name": "POST api\/auth\/login",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/auth\/login",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/auth\/login"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"hudson45@example.org\",\"password\":\"&o)'<vp6EC;\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST api\/auth\/logout",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/auth\/logout",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/auth\/logout"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "User management",
+            "name": "Car",
             "description": "",
             "item": [
                 {
@@ -106,18 +41,15 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"per_page\":19}"
+                            "raw": "{\"per_page\":11}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":18,\"number\":9559966,\"user\":null},{\"id\":19,\"number\":9303641,\"user\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":35,\"number\":9537047,\"user\":null},{\"id\":36,\"number\":9687701,\"user\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -144,18 +76,15 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"number\":\"facere\"}"
+                            "raw": "{\"number\":\"consequatur\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":20,\"number\":9067076,\"user\":null}}",
+                            "body": "{\"data\":{\"id\":37,\"number\":9690761,\"user\":null}}",
                             "name": ""
                         }
                     ]
@@ -189,16 +118,13 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":21,\"number\":9609612,\"user\":null}}",
+                            "body": "{\"data\":{\"id\":38,\"number\":9793420,\"user\":null}}",
                             "name": ""
                         }
                     ]
@@ -233,18 +159,15 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"number\":\"ipsam\"}"
+                            "raw": "{\"number\":\"accusantium\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":22,\"number\":9303306,\"user\":null}}",
+                            "body": "{\"data\":{\"id\":39,\"number\":9404989,\"user\":null}}",
                             "name": ""
                         }
                     ]
@@ -278,10 +201,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -291,6 +211,78 @@
                             "name": ""
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "update car",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"reed04@example.net\",\"password\":\"^yTf>u*ST^e=QPpn\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":34,\"number\":9947240,\"user\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/auth\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -320,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"per_page\":19}"
+                            "raw": "{\"per_page\":8}"
                         },
                         "description": ""
                     },
@@ -328,7 +320,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":102,\"name\":\"Dr. Danielle Ratke\",\"email\":\"gschuppe@example.com\"},{\"id\":103,\"name\":\"Halie Marquardt\",\"email\":\"dkessler@example.org\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":116,\"name\":\"Nicholaus Schamberger\",\"email\":\"arlene12@example.net\"},{\"id\":117,\"name\":\"Tomas Kuhic MD\",\"email\":\"rwill@example.net\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -355,7 +347,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"velit\",\"password\":\"_G-[!*y\",\"email\":\"robel.theresa@example.com\"}"
+                            "raw": "{\"name\":\"voluptatem\",\"password\":\"8KuyDox(&e4'(^^5<<pb\",\"email\":\"kaylin.weimann@example.org\"}"
                         },
                         "description": ""
                     },
@@ -363,7 +355,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":104,\"name\":\"Earnestine Welch\",\"email\":\"lori.leannon@example.net\"}}",
+                            "body": "{\"data\":{\"id\":118,\"name\":\"Mrs. Cecelia Keeling V\",\"email\":\"jazlyn.spencer@example.com\"}}",
                             "name": ""
                         }
                     ]
@@ -403,7 +395,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":105,\"name\":\"Naomie Huel\",\"email\":\"ferne.yundt@example.org\"}}",
+                            "body": "{\"data\":{\"id\":119,\"name\":\"Reed Kohler\",\"email\":\"orlo.padberg@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -438,7 +430,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"unde\",\"password\":\"?`S99I3P*LVb'^N{.57\",\"email\":\"wsatterfield@example.net\",\"car_id\":10}"
+                            "raw": "{\"name\":\"voluptate\",\"password\":\"f!.hysD$RO\",\"email\":\"trycia.bergstrom@example.com\",\"car_id\":1}"
                         },
                         "description": ""
                     },
@@ -446,7 +438,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":106,\"name\":\"Ms. Kavon Dooley V\",\"email\":\"amira06@example.com\"}}",
+                            "body": "{\"data\":{\"id\":120,\"name\":\"Emile Zulauf\",\"email\":\"armstrong.frederick@example.org\"}}",
                             "name": ""
                         }
                     ]

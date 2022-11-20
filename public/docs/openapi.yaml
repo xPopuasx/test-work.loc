@@ -7,72 +7,6 @@ servers:
   -
     url: 'http://localhost'
 paths:
-  /api/auth/login:
-    post:
-      summary: ''
-      operationId: postApiAuthLogin
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: hudson45@example.org
-                password:
-                  type: string
-                  description: ''
-                  example: "&o)'<vp6EC;"
-              required:
-                - email
-                - password
-      security: []
-  /api/auth/logout:
-    post:
-      summary: ''
-      operationId: postApiAuthLogout
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
   /api/cars:
     get:
       summary: 'show cars'
@@ -103,12 +37,12 @@ paths:
                 example:
                   data:
                     -
-                      id: 18
-                      number: 9559966
+                      id: 35
+                      number: 9537047
                       user: null
                     -
-                      id: 19
-                      number: 9303641
+                      id: 36
+                      number: 9687701
                       user: null
                   links:
                     first: '/?page=1'
@@ -141,12 +75,12 @@ paths:
                     type: array
                     example:
                       -
-                        id: 18
-                        number: 9559966
+                        id: 35
+                        number: 9537047
                         user: null
                       -
-                        id: 19
-                        number: 9303641
+                        id: 36
+                        number: 9687701
                         user: null
                     items:
                       type: object
@@ -181,7 +115,7 @@ paths:
                       to: 2
                       total: 2
       tags:
-        - 'User management'
+        - Car
       requestBody:
         required: false
         content:
@@ -204,8 +138,7 @@ paths:
                 per_page:
                   type: integer
                   description: ''
-                  example: 19
-      security: []
+                  example: 11
     post:
       summary: 'store car'
       operationId: storeCar
@@ -234,18 +167,18 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 20
-                    number: 9067076
+                    id: 37
+                    number: 9690761
                     user: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 20
-                      number: 9067076
+                      id: 37
+                      number: 9690761
                       user: null
       tags:
-        - 'User management'
+        - Car
       requestBody:
         required: true
         content:
@@ -256,10 +189,9 @@ paths:
                 number:
                   type: string
                   description: ''
-                  example: facere
+                  example: consequatur
               required:
                 - number
-      security: []
   '/api/cars/{id}':
     get:
       summary: 'show car'
@@ -289,19 +221,18 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 21
-                    number: 9609612
+                    id: 38
+                    number: 9793420
                     user: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 21
-                      number: 9609612
+                      id: 38
+                      number: 9793420
                       user: null
       tags:
-        - 'User management'
-      security: []
+        - Car
     put:
       summary: 'update car'
       operationId: updateCar
@@ -330,18 +261,18 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 22
-                    number: 9303306
+                    id: 39
+                    number: 9404989
                     user: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 22
-                      number: 9303306
+                      id: 39
+                      number: 9404989
                       user: null
       tags:
-        - 'User management'
+        - Car
       requestBody:
         required: true
         content:
@@ -352,10 +283,9 @@ paths:
                 number:
                   type: string
                   description: ''
-                  example: ipsam
+                  example: accusantium
               required:
                 - number
-      security: []
     delete:
       summary: 'delete car'
       operationId: deleteCar
@@ -387,8 +317,7 @@ paths:
                 example:
                   - ok
       tags:
-        - 'User management'
-      security: []
+        - Car
     parameters:
       -
         in: path
@@ -398,6 +327,90 @@ paths:
         required: true
         schema:
           type: integer
+  /api/auth/login:
+    post:
+      summary: 'update car'
+      operationId: updateCar
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 34
+                    number: 9947240
+                    user: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 34
+                      number: 9947240
+                      user: null
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: reed04@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: '^yTf>u*ST^e=QPpn'
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
   /api/users:
     get:
       summary: 'show users'
@@ -428,13 +441,13 @@ paths:
                 example:
                   data:
                     -
-                      id: 102
-                      name: 'Dr. Danielle Ratke'
-                      email: gschuppe@example.com
+                      id: 116
+                      name: 'Nicholaus Schamberger'
+                      email: arlene12@example.net
                     -
-                      id: 103
-                      name: 'Halie Marquardt'
-                      email: dkessler@example.org
+                      id: 117
+                      name: 'Tomas Kuhic MD'
+                      email: rwill@example.net
                   links:
                     first: '/?page=1'
                     last: '/?page=1'
@@ -466,13 +479,13 @@ paths:
                     type: array
                     example:
                       -
-                        id: 102
-                        name: 'Dr. Danielle Ratke'
-                        email: gschuppe@example.com
+                        id: 116
+                        name: 'Nicholaus Schamberger'
+                        email: arlene12@example.net
                       -
-                        id: 103
-                        name: 'Halie Marquardt'
-                        email: dkessler@example.org
+                        id: 117
+                        name: 'Tomas Kuhic MD'
+                        email: rwill@example.net
                     items:
                       type: object
                   links:
@@ -529,7 +542,7 @@ paths:
                 per_page:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 8
     post:
       summary: 'Store user'
       operationId: storeUser
@@ -558,16 +571,16 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 104
-                    name: 'Earnestine Welch'
-                    email: lori.leannon@example.net
+                    id: 118
+                    name: 'Mrs. Cecelia Keeling V'
+                    email: jazlyn.spencer@example.com
                 properties:
                   data:
                     type: object
                     example:
-                      id: 104
-                      name: 'Earnestine Welch'
-                      email: lori.leannon@example.net
+                      id: 118
+                      name: 'Mrs. Cecelia Keeling V'
+                      email: jazlyn.spencer@example.com
       tags:
         - Users
       requestBody:
@@ -580,15 +593,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: velit
+                  example: voluptatem
                 password:
                   type: string
                   description: ''
-                  example: '_G-[!*y'
+                  example: "8KuyDox(&e4'(^^5<<pb"
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: robel.theresa@example.com
+                  example: kaylin.weimann@example.org
               required:
                 - password
                 - email
@@ -621,16 +634,16 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 105
-                    name: 'Naomie Huel'
-                    email: ferne.yundt@example.org
+                    id: 119
+                    name: 'Reed Kohler'
+                    email: orlo.padberg@example.net
                 properties:
                   data:
                     type: object
                     example:
-                      id: 105
-                      name: 'Naomie Huel'
-                      email: ferne.yundt@example.org
+                      id: 119
+                      name: 'Reed Kohler'
+                      email: orlo.padberg@example.net
       tags:
         - Users
     put:
@@ -661,16 +674,16 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 106
-                    name: 'Ms. Kavon Dooley V'
-                    email: amira06@example.com
+                    id: 120
+                    name: 'Emile Zulauf'
+                    email: armstrong.frederick@example.org
                 properties:
                   data:
                     type: object
                     example:
-                      id: 106
-                      name: 'Ms. Kavon Dooley V'
-                      email: amira06@example.com
+                      id: 120
+                      name: 'Emile Zulauf'
+                      email: armstrong.frederick@example.org
       tags:
         - Users
       requestBody:
@@ -683,19 +696,19 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: unde
+                  example: voluptate
                 password:
                   type: string
                   description: ''
-                  example: "?`S99I3P*LVb'^N{.57"
+                  example: f!.hysD$RO
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: wsatterfield@example.net
+                  example: trycia.bergstrom@example.com
                 car_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 1
     delete:
       summary: 'delete user'
       operationId: deleteUser
@@ -739,10 +752,10 @@ paths:
           type: integer
 tags:
   -
-    name: Endpoints
+    name: Car
     description: ''
   -
-    name: 'User management'
+    name: Endpoints
     description: ''
   -
     name: Users

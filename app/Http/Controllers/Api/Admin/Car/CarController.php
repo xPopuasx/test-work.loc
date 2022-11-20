@@ -19,7 +19,7 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 
-#[Group('Users')]
+#[Group('Car')]
 #[Authenticated]
 class CarController extends Controller
 {
