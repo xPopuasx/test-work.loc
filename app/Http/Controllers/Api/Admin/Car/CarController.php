@@ -13,13 +13,14 @@ use App\Models\User\User;
 use App\Services\Car\CarService;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 
-/**
- * @group User management
- */
+#[Group('Users')]
+#[Authenticated]
 class CarController extends Controller
 {
     public function __construct(private CarService $carService)
