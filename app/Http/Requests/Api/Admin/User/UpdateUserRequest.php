@@ -27,7 +27,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'nullable|string',
             'password' => 'nullable|string',
-            'email' => ['nullable', 'string', 'email', Rule::unique('users')->ignore($this->route()->user->id)->whereNull('deleted_at')],
+            'email' => ['nullable', 'string', 'email', Rule::unique('users')->ignore($this->route()->user->id)],
             'car_id' => ['nullable', 'integer', 'exists:cars,id',
                 Rule::unique('user_cars', 'car_id')->ignore($this->route()->user->id, 'carable_id')
             ]

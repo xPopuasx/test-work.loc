@@ -75,6 +75,8 @@ class UserService extends Service
      */
     public function delete(Model $model): bool
     {
+        $model->userCar()->delete();
+
         return $model->delete();
     }
 }
