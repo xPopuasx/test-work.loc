@@ -100,6 +100,24 @@ class UserTest extends TestCase
             ]);
     }
 
+    public function test_update_user_delete_car()
+    {
+        $response = $this->withHeaders($this->headers)->patchJson('/api/users/'.$this->getUser()->id, [
+            'name' => 'update_'.Str::random(8),
+            'email' => 'update_'.Str::random(10).'@mail.ru',
+        ]);
+
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    'id',
+                    'name',
+                    'email',
+                    'car',
+                ],
+            ]);
+    }
+
     public function test_delete_user()
     {
         $response = $this->withHeaders($this->headers)->deleteJson('/api/users/'.$this->getUser()->id);
