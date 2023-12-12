@@ -26,10 +26,6 @@ class Car extends Model
         'number',
     ];
 
-    public $casts = [
-        'user',
-    ];
-
     public function tenant(): hasOne
     {
         return $this->hasOne(UserCar::class);
